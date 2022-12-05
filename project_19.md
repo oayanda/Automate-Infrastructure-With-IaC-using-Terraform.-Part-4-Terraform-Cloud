@@ -24,7 +24,7 @@ Next, create a workspace using `version control workflow`
 
 Select your preferred version control workflow, in this case, I have selected Gitlab
 
-![workspace](/images/4.png)
+![workspace](/images/14.png)
 
 4. **Configure variables**
 
