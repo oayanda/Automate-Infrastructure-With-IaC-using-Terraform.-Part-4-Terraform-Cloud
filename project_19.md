@@ -13,6 +13,7 @@ For this project we will use a free account. Register an Terraform account [here
 To create a blank organization, `click on Start from Scratch`
 
 Enter the organization name and confirm email address and click on `create organization`
+
 ![workspace](/images/3.png)
 
 Workspaces determine how Terraform Cloud organizes infrastructure. A workspace contains your Terraform configuration (infrastructure as code), shared variable values, your current and historical Terraform state, and run logs.
@@ -22,6 +23,7 @@ Next, create a workspace using `version control workflow`
 ![workspace](/images/2.png)
 
 Select your preferred version control workflow, in this case, I have selected Gitlab
+
 ![workspace](/images/4.png)
 
 4. **Configure variables**
