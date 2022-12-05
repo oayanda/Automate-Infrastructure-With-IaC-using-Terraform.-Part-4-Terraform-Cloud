@@ -14,7 +14,7 @@ To create a blank organization, `click on Start from Scratch`
 
 Enter the organization name and confirm email address and click on `create organization`
 
-![workspace](/images/3.png)
+![workspace](/images/a.png)
 
 Workspaces determine how Terraform Cloud organizes infrastructure. A workspace contains your Terraform configuration (infrastructure as code), shared variable values, your current and historical Terraform state, and run logs.
 
@@ -26,7 +26,7 @@ Select your preferred version control workflow, in this case, I have selected Gi
 
 > If this is your first time, you are required to connect your terraform account with your GitLab account. [*Connect your Here*](https://developer.hashicorp.com/terraform/cloud-docs/vcs/gitlab-com)
 
-![workspace](/images/14.png)
+![workspace](/images/b.png)
 
 Enter Workspace name and click on `create workspace`
 
@@ -34,8 +34,22 @@ Enter Workspace name and click on `create workspace`
 
 4. **Configure variables**
 
-Next, we need you to configure variables
-![workspace](/images/6.png)
+Terraform make use of two variable types namely, Terraform variables and Environment variables which needs to be declared or inform terraform cloud.
+
+Terraform or input variables are variables you declare in your terraform code configuration. Luckily, after refactoring our code, we were able to section our variables file to terraform.tfvars. Instead of declaring the variables and vaules manually, we will update the extention to `*.auto.tfvars` to enable terraform cloud to automatically read these values.
+
+Environment variables are available in the Terraform runtime environment. In this case, our environment is AWS.
+
+Next, we need you to configure environemnt variables.
+
+- Click on configure variables
+- Click on Add variables
+- Specify environment variable radio button
+Enter the name and value ( *`Access key id` and `secret key` from your user `AWS user account` and  make sure **sensitive** checkbox is selected for each entry*)
+
+![workspace](/images/3.png)
+
+
 
 5. **Run Terrafrom scripts with Packer**
 
