@@ -22,11 +22,20 @@ Next, create a workspace using `version control workflow`
 
 ![workspace](/images/2.png)
 
-Select your preferred version control workflow, in this case, I have selected Gitlab
+Select your preferred version control workflow, in this case, I have selected GitLab.
+
+> If this is your first time, you are required to connect your terraform account with your GitLab account. [*Connect your Here*](https://developer.hashicorp.com/terraform/cloud-docs/vcs/gitlab-com)
 
 ![workspace](/images/14.png)
 
+Enter Workspace name and click on `create workspace`
+
+![workspace](/images/5.png)
+
 4. **Configure variables**
+
+Next, we need you to configure variables
+![workspace](/images/6.png)
 
 5. **Run Terrafrom scripts with Packer**
 
