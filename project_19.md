@@ -4,7 +4,9 @@ In this articule, we will be puting it all together from part one. I will also i
 
 1. **Create a Terraform Cloud account**
 
-Register an Terraform account [here](https://app.terraform.io/signup/account)
+For this project we will use a free account. Register an Terraform account [here](https://app.terraform.io/signup/account)
+
+![terraform account](/images/1.png)
 
 2. Create an organization
 
