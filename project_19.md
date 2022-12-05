@@ -8,13 +8,17 @@ For this project we will use a free account. Register an Terraform account [here
 
 ![terraform account](/images/1.png)
 
-2. Create an organization
+2. **Create an organization**
 
-3. Configure a workspace
-4. Configure variables
-5. Run Terrafrom scripts with Packer
-6. Run terraform plan and terraform apply from web console
-7. Test automated terraform plan
+3. **Configure a workspace**
+
+4. **Configure variables**
+
+5. **Run Terrafrom scripts with Packer**
+
+6. **Run terraform plan and terraform apply from web console**
+
+7. **Test automated terraform plan**
 
 
 
