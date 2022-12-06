@@ -1,5 +1,7 @@
 # PUTTING IT ALL TOGETHER
 
+This tutorial assumes that you are continuing from the [previous tutorials.](https://github.com/oayanda/AUTOMATE-INFRASTRUCTURE-WITH-IAC-USING-TERRAFORM.-PART-3---REFACTORING)
+
 In this articule, we will be puting it all together from part one. I will also introduce what Terraform calls Remote Operations. Simply put, Remote Operations are terraform runs managed by Terraform Cloud.
 
 1. **Create a Terraform Cloud account**
@@ -24,7 +26,7 @@ Next, create a workspace using `version control workflow`
 
 Select your preferred version control workflow, in this case, I have selected GitLab.
 
-> If this is your first time, you are required to connect your terraform account with your GitLab account. [*Connect your Here*](https://developer.hashicorp.com/terraform/cloud-docs/vcs/gitlab-com)
+> If this is your first time, you are required to connect your terraform account with your GitLab account. [*Connect your account Here*](https://developer.hashicorp.com/terraform/cloud-docs/vcs/gitlab-com)
 
 ![workspace](/images/b.png)
 
@@ -40,7 +42,7 @@ Terraform or input variables are variables you declare in your terraform code co
 
 Environment variables are available in the Terraform runtime environment. In this case, our environment is AWS.
 
-Next, we need you to configure environemnt variables.
+Next, we need you to configure environment variables.
 
 - Click on configure variables
 - Click on Add variables
@@ -49,7 +51,18 @@ Enter the name and value ( *`Access key id` and `secret key` from your user `AWS
 
 ![workspace](/images/3.png)
 
+**Install Packer on a Windows OS**
 
+```bash
+# Install Packer
+
+choco install packer
+```
+
+> Ensure Chocolatey package manager is installed.
+[Click Here](https://docs.chocolatey.org/en-us/choco/setup)
+
+![workspace](/images/7.png)
 
 5. **Run Terrafrom scripts with Packer**
 
