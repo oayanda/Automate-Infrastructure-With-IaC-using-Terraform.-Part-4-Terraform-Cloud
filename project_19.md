@@ -135,7 +135,7 @@ build {
 Run Packer Build 
 
 ```bash
-# Run Packer Build to get your Custome AMI ID
+# Run Packer Build to get your Custom AMI ID
 
 packer build web.pkr.hcl
 packer build bastion.pkr.hcl
