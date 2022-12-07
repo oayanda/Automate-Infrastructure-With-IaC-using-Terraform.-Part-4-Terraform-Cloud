@@ -141,8 +141,11 @@ packer build web.pkr.hcl
 packer build bastion.pkr.hcl
 packer build nginx.pkr.hcl
 ```
+![custom-ami](/images/9.png)
 
+Verify in AWS Ami dashboard
 
+![custom-ami](/images/10.png)
 6. **Run terraform plan and terraform apply from web console**
 
 7. **Test automated terraform plan**
