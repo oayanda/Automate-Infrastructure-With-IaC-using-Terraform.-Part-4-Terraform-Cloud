@@ -34,7 +34,7 @@ Enter Workspace name and click on `create workspace`
 
 ![workspace](/images/5.png)
 
-4. **Configure variables**
+3. **Configure variables**
 
 Terraform make use of two variable types namely, Terraform variables and Environment variables which needs to be declared or inform terraform cloud.
 
@@ -51,7 +51,9 @@ Enter the name and value ( *`AWS_ACCESS_KEY` and `AWS_SECRET_KEY` from your user
 
 ![workspace](/images/c.png)
 
-**Install Packer on a Windows OS**
+4. Packer
+
+Packer is an open source tool for creating identical machine images for multiple platforms from a single source configuration. Packer is lightweight, runs on every major operating system, and is highly performant, creating machine images for multiple platforms in parallel.
 
 ```bash
 # Install Packer
@@ -62,12 +64,28 @@ choco install packer
 > Ensure Chocolatey package manager is installed.
 [Click Here](https://docs.chocolatey.org/en-us/choco/setup)
 
-
 ![workspace](/images/7.png)
 
-5. **Run Terrafrom scripts with Packer**
+5. Create Packer Template and Build AMIs**
 
+A Packer template is a configuration file that defines the image you want to build and how to build it. Packer templates use the Hashicorp Configuration Language (HCL).
+
+Create packer templates for `Bastion`, `nginx` and `web application`(tooling and wordpress) with extention `*.pkr.hcl` and save the required scripts in `.sh` file for each for the templates.
+
+*Make sure the files are available in the same directory*
 *Script for the tooling and wordpress*
+
+Get the available ami in your available zone.
+
+```bash
+# List available RHEL 8 AMIs in us-east-1 according to Name, ImageId and Creation Date. Select the required one that matches your instance type
+
+aws ec2 describe-images --owners 'amazon' --filters 'Name=name,Values=RHEL-8*' --query 'sort_by(Images, &CreationDate)[*].[Name,ImageId,CreationDate]' --region us-east-1 --output table
+```
+
+![amis](/images/d.png)
+
+Packer template for Web application
 
 ```bash
 
@@ -89,12 +107,12 @@ source "amazon-ebs" "terraform-web-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "RHEL-SAP-8.1.0_HVM-20211007-x86_64-0-Hourly2-GP2"
+      name                = "RHEL-8.3_HVM-20210209-x86_64-0-Hourly2-GP2"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["309956199498"]
+    owners      = ["amazon"]
   }
   ssh_username = "ec2-user"
   tag {
@@ -113,6 +131,17 @@ build {
   }
 }
 ```
+
+Run Packer Build 
+
+```bash
+# Run Packer Build to get your Custome AMI ID
+
+packer build web.pkr.hcl
+packer build bastion.pkr.hcl
+packer build nginx.pkr.hcl
+```
+
 
 6. **Run terraform plan and terraform apply from web console**
 
