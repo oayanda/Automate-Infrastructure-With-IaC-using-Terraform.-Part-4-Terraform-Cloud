@@ -151,9 +151,7 @@ Update the AMis in the variable file `terraform.auto.tfvars`
 
 ![custom-ami](/images/11.png)
 
-Update backend.tf file to use Remote backend using Terraform Cloud
 
-![custom-ami](/images/14.png)
 6. **Run terraform plan and terraform apply from web console**
 
 Commit and push updated code to GitLab. This triggers a CI/CD pipeline that runs a Terraform  Plan in Terraform Cloud.
@@ -162,9 +160,9 @@ Commit and push updated code to GitLab. This triggers a CI/CD pipeline that runs
 
  Automatic Trigger of Terraform Plan on Terraform Cloud Console
 
-![custom-ami](/images/13.png)
+![custom-ami](/images/e.png)
 
 7. **Test automated terraform plan**
 
-
+Confirm and Apply the Plan
 
