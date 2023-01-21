@@ -49,7 +49,7 @@ Next, we need you to configure environment variables.
 - Specify environment variable radio button
 Enter the name and value ( *`AWS_ACCESS_KEY` and `AWS_SECRET_KEY` from your user `AWS user account` and  make sure **sensitive** checkbox is selected for each entry*)
 
-![workspace](/images/c.png)
+![workspace](/images/3.png)
 
 4. Packer
 
